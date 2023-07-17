@@ -34,7 +34,7 @@ interface ExpandMoreProps extends IconButtonProps {
     }),
   }));
 
-export default function employeeCards() {
+export default function EmployeeCards() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -47,7 +47,7 @@ export default function employeeCards() {
       <div className='flex flex-col min-h-screen bg-white rounded-r-xl p-5'>
         <h3 className='h-min font-bold mb-5'>My Team</h3>
         <h3 className='h-min font-bold mb-5'>Search Keywords:</h3>
-        <p>Use this searchbar to search for keywords to identify potential project team members with relevant experience to the new project you're staffing, or to see potential internal candidates for an opening.</p>
+        <p>{`Use this searchbar to search for keywords to identify potential project team members with relevant experience to the new project you're staffing, or to see potential internal candidates for an opening.`}</p>
         </div> 
       <div className='flex flex-wrap h-min p-5 min-w-fit'>
 
