@@ -73,7 +73,6 @@ export default function employeeCards() {
                 height="194"
                 image={item.imgLink}
                 alt="Paella dish"
-                className='h-17'
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
