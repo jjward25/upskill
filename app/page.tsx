@@ -47,7 +47,7 @@ export default function EmployeeCards() {
       <div className='flex flex-col min-h-screen bg-white rounded-r-xl p-5'>
         <h3 className='h-min font-bold mb-5'>My Team</h3>
         <h3 className='h-min font-bold mb-5'>Search Keywords:</h3>
-        <p>{`Use this searchbar to search for keywords to identify potential project team members with relevant experience to the new project you're staffing, or to see potential internal candidates for an opening.`}</p>
+        <p>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
         </div> 
       <div className='flex flex-wrap h-min p-5 min-w-fit'>
 
