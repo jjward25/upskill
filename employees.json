@@ -1,0 +1,159 @@
+{
+    "accountExecutives":[
+        {
+            "firstLast": "First Last",
+            "role": "Account Executive",
+            "companyStartDate": "2021-11-01",
+            "roleStartDate": "2021-11-01",
+            "roleTenureRank": 1,
+            "imgLink": "/greg.png",
+            "roleDevelopment":{
+            "rolePerformance": {
+                    "customerSatisfaction": 8.5,
+                    "signedDeals": 20,
+                    "grossRenewalARR": "80%",
+                    "netRenewalARR": "90%",
+                    "avgCustomerLifetimeValue":"$1,000"
+                },
+                "certificationsEnablement": [
+                    "Product X Enablement"
+                ],
+                "workflowAnalytics": {
+                    "avgBookSize": 28,
+                    "avgClientTime":1.2
+                },
+                "Other": {
+                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+                }
+            },
+            "careerDevelopment": {                
+                "commonNextRoles": [
+                    "Regional Manager",
+                    "Renewals Manager",
+                    "Sales Engineering",
+                    "Sales Ops"
+                ],
+                "relatedCertificationsEnablement": "",
+                "priorExperience": {
+                    "Skill": "2 Years"
+                }  
+            }
+        },
+        {
+            "firstLast": "First Last",
+            "role": "Account Executive",
+            "companyStartDate": "2021-11-01",
+            "roleStartDate": "2021-11-01",
+            "roleTenureRank": 1,
+            "imgLink": "/greg.png",
+            "roleDevelopment":{
+            "rolePerformance": {
+                    "customerSatisfaction": 8.5,
+                    "signedDeals": 20,
+                    "grossRenewalARR": "80%",
+                    "netRenewalARR": "90%",
+                    "avgCustomerLifetimeValue":"$1,000"
+                },
+                "certificationsEnablement": [
+                    "Product X Enablement"
+                ],
+                "workflowAnalytics": {
+                    "avgBookSize": 28,
+                    "avgClientTime":1.2
+                },
+                "Other": {
+                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+                }
+            },
+            "careerDevelopment": {                
+                "commonNextRoles": [
+                    "Regional Manager",
+                    "Renewals Manager",
+                    "Sales Engineering",
+                    "Sales Ops"
+                ],
+                "relatedCertificationsEnablement": "",
+                "priorExperience": {
+                    "Skill": "2 Years"
+                }  
+            }
+        },
+        {
+            "firstLast": "First Last",
+            "role": "Account Executive",
+            "companyStartDate": "2021-11-01",
+            "roleStartDate": "2021-11-01",
+            "roleTenureRank": 1,
+            "imgLink": "/greg.png",
+            "roleDevelopment":{
+            "rolePerformance": {
+                    "customerSatisfaction": 8.5,
+                    "signedDeals": 20,
+                    "grossRenewalARR": "80%",
+                    "netRenewalARR": "90%",
+                    "avgCustomerLifetimeValue":"$1,000"
+                },
+                "certificationsEnablement": [
+                    "Product X Enablement"
+                ],
+                "workflowAnalytics": {
+                    "avgBookSize": 28,
+                    "avgClientTime":1.2
+                },
+                "Other": {
+                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+                }
+            },
+            "careerDevelopment": {                
+                "commonNextRoles": [
+                    "Regional Manager",
+                    "Renewals Manager",
+                    "Sales Engineering",
+                    "Sales Ops"
+                ],
+                "relatedCertificationsEnablement": "",
+                "priorExperience": {
+                    "Skill": "2 Years"
+                }  
+            }
+        },
+        {
+            "firstLast": "First Last",
+            "role": "Account Executive",
+            "companyStartDate": "2021-11-01",
+            "roleStartDate": "2021-11-01",
+            "roleTenureRank": 1,
+            "imgLink": "/greg.png",
+            "roleDevelopment":{
+            "rolePerformance": {
+                    "customerSatisfaction": 8.5,
+                    "signedDeals": 20,
+                    "grossRenewalARR": "80%",
+                    "netRenewalARR": "90%",
+                    "avgCustomerLifetimeValue":"$1,000"
+                },
+                "certificationsEnablement": [
+                    "Product X Enablement"
+                ],
+                "workflowAnalytics": {
+                    "avgBookSize": 28,
+                    "avgClientTime":1.2
+                },
+                "Other": {
+                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+                }
+            },
+            "careerDevelopment": {                
+                "commonNextRoles": [
+                    "Regional Manager",
+                    "Renewals Manager",
+                    "Sales Engineering",
+                    "Sales Ops"
+                ],
+                "relatedCertificationsEnablement": "",
+                "priorExperience": {
+                    "Skill": "2 Years"
+                }  
+            }
+        }
+]}
