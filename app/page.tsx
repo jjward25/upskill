@@ -107,7 +107,7 @@ export default function Detail() {
 
                                         <p className='text-sm'>Common Next Roles: </p>
                                         <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                                            {item.careerDevelopment.commonNextRoles && item.careerDevelopment.commonNextRoles.map((role) => (<p>{role}</p>))}
+                                            {item.careerDevelopment.commonNextRoles && item.careerDevelopment.commonNextRoles.map((role) => (<p key={"Role" + Math.random()} >{role}</p>))}
                                         </p>
 
                                         <p className='text-sm'>Prior + Related: </p>
@@ -119,7 +119,7 @@ export default function Detail() {
                                             Skills + Tools:
                                             <div className='flex flex-wrap'>
                                                 {Object.keys(item.careerDevelopment.skillsTools).map(key => (
-                                                    <span className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
+                                                    <span key={"Key" + Math.random()} className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
                                                     {key}
                                                     </span>
                                                 ))}
