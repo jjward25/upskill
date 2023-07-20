@@ -4,15 +4,15 @@ import React, { useState } from 'react'
 
 export default function Detail() {
 
-    const [expandedIds, setExpandedIds] = useState<Any>([]);
+    const [expandedIds, setExpandedIds] = useState(['']);
 
-    const toggleVisibility = (idToToggle) => {
+    const toggleVisibility = (idToToggle:any) => {
       // set new state
-      setExpandedIds((prevIds) => {
+      setExpandedIds((prevIds:any) => {
       // if the id to toggle is in the array, if not add it
       if (!expandedIds.includes(idToToggle)) return [...prevIds, idToToggle];
       // else remove the id
-      return prevIds.filter((id) => id !== idToToggle);
+      return prevIds.filter((id:any) => id !== idToToggle);
     });
   };
 
