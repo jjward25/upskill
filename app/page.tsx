@@ -34,7 +34,7 @@ export default function Detail() {
     {content.accountExecutives &&
         content.accountExecutives.map((item, i) => (
 
-        <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
+        <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
 
             <div className="flex items-center bg-white h-15">
                 <img className='w-14 h-14 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
