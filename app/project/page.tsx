@@ -1,7 +1,6 @@
 "use client"
 import content from '../../employees.json';
 import React, { useState } from 'react'
-import Card from '../card'
 
 export default function Detail() {
 
@@ -37,6 +36,20 @@ export default function Detail() {
         content.accountExecutives.map((item, i) => (
 
         <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
+
+            <div className="flex items-center bg-white h-15">
+                <img className='w-14 h-14 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
+    
+                <div className="pl-3 w-full">
+                    <div className="font-medium">
+                        {item.firstLast}
+                    </div>
+                    <div className="text-gray-600 text-sm">
+                        {item.role}
+                    </div>
+                </div>
+            </div>
+
             <a href="#" className="w-full block h-full">
                 <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover"/>
                 <div className="bg-white w-full p-4">
@@ -59,69 +72,56 @@ export default function Detail() {
                     </div>
 
                     {expandedIds.includes(item.EmpID)  && (
-                        <div className="flex flex-col gap-5 my-5 px-2">
+                        <div className="flex flex-col my-5 px-2">
                           
-                     
+                            <p className='text-sm'>Role Performance: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                Customer Satisfaction: {item.roleDevelopment.rolePerformance.customerSatisfaction}
+                                <br/>Deals Signed: {item.roleDevelopment.rolePerformance.signedDeals}
+                                <br/>Gross Renewal ARR: {item.roleDevelopment.rolePerformance.grossRenewalARR}
+                                <br/>Net Renewal ARR: {item.roleDevelopment.rolePerformance.netRenewalARR}
+                                <br/>Average Lifetime Value: {item.roleDevelopment.rolePerformance.avgCustomerLifetimeValue}
+                            </p>
 
-                    <p className='text-sm'>Role Performance: </p>
-                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                        Customer Satisfaction: {item.roleDevelopment.rolePerformance.customerSatisfaction}
-                        <br/>Deals Signed: {item.roleDevelopment.rolePerformance.signedDeals}
-                        <br/>Gross Renewal ARR: {item.roleDevelopment.rolePerformance.grossRenewalARR}
-                        <br/>Net Renewal ARR: {item.roleDevelopment.rolePerformance.netRenewalARR}
-                        <br/>Average Lifetime Value: {item.roleDevelopment.rolePerformance.avgCustomerLifetimeValue}
-                    </p>
+                            <p className='text-sm'>Certifications + Enablement: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.roleDevelopment.certificationsEnablement}
+                            </p>
 
-                    <p className='text-sm'>Certifications + Enablement: </p>
-                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                        {item.roleDevelopment.certificationsEnablement}
-                    </p>
+                            <p className='text-sm'>Workflow Analytics: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                Avg Accounts Managed: {item.roleDevelopment.workflowAnalytics.avgBookSize}
+                                <br/>Avg Monthly Time per Client: {item.roleDevelopment.workflowAnalytics.avgClientTime}
+                            </p>
 
-                    <p className='text-sm'>Workflow Analytics: </p>
-                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                        Avg Accounts Managed: {item.roleDevelopment.workflowAnalytics.avgBookSize}
-                        <br/>Avg Monthly Time per Client: {item.roleDevelopment.workflowAnalytics.avgClientTime}
-                    </p>
+                            <p className='text-sm'>Performance Details: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.roleDevelopment.Other.Note}
+                            </p>
 
-                    <p className='text-sm'>Performance Details: </p>
-                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                        {item.roleDevelopment.Other.Note}
-                    </p>
+                            <p className='text-sm'>Common Next Roles: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.careerDevelopment.commonNextRoles && item.careerDevelopment.commonNextRoles.map((role) => (<p>{role}</p>))}
+                            </p>
 
-                    <p className='text-sm'>Common Next Roles: </p>
-                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                        {item.careerDevelopment.commonNextRoles && item.careerDevelopment.commonNextRoles.map((role) => (<p>{role}</p>))}
-                    </p>
+                            <p className='text-sm'>Prior + Related: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
+                            </p>
 
-                    <p className='text-sm'>Prior + Related: </p>
-                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
-                        {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
-                    </p>
-
-                    <div className="flex flex-col justify-starts items-left py-2 border-b-2 text-sm ">
-                        Skills + Tools:
-                        <div className='flex flex-wrap'>
-                            {Object.keys(item.careerDevelopment.skillsTools).map(key => (
-                                <span className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
-                                {key}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                )}
-                    <div className="flex items-center mt-2 pt-2 border-t-2">
-                        <img className='w-10 h-10 object-cover rounded-full' alt='User avatar' src={item.imgLink}/>
-            
-                        <div className="pl-3">
-                            <div className="font-medium">
-                                {item.firstLast}
-                            </div>
-                            <div className="text-gray-600 text-sm">
-                                {item.role}
+                            <div className="flex flex-col justify-starts items-left py-2 border-b-2 text-sm ">
+                                Skills + Tools:
+                                <div className='flex flex-wrap'>
+                                    {Object.keys(item.careerDevelopment.skillsTools).map(key => (
+                                        <span className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
+                                        {key}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
+                    
                 </div>
             </a>
         </div>

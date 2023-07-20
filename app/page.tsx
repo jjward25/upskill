@@ -1,144 +1,142 @@
 "use client"
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Typography from './typography';
 import content from '../employees.json';
+import React, { useState } from 'react'
 
+export default function Detail() {
 
+    const [expandedIds, setExpandedIds] = useState<Any>([]);
 
-interface ExpandMoreProps extends IconButtonProps {
-  expand: boolean;
-}
-
- const ExpandMore = styled((props: ExpandMoreProps) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-  })(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  }));
-
-export default function EmployeeCards() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+    const toggleVisibility = (idToToggle) => {
+      // set new state
+      setExpandedIds((prevIds) => {
+      // if the id to toggle is in the array, if not add it
+      if (!expandedIds.includes(idToToggle)) return [...prevIds, idToToggle];
+      // else remove the id
+      return prevIds.filter((id) => id !== idToToggle);
+    });
   };
 
 
-  return (
-    <main className='grid grid-cols-[20%_80%] min-h-screen w-full max-w-full'>
-      <div className='flex flex-col min-h-screen bg-white rounded-r-xl p-5'>
-        <h3 className='h-min font-bold mb-5'>My Team</h3>
-        <h3 className='h-min font-bold mb-5'>Search Keywords:</h3>
-        <p>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
-        </div> 
-      <div className='flex flex-wrap h-min p-5 min-w-fit'>
+    return (
+        <main className='grid grid-cols-[20%_80%] min-h-screen w-full max-w-full'>
+        <div className='flex flex-col min-h-screen bg-white rounded-r-xl p-5'>
+          <h3 className='h-min font-bold mb-5'>My Team</h3>
+          <h3 className='h-min font-bold mb-5'>Search Keywords:</h3>
+          <p>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
+          </div> 
+        <div className='flex flex-wrap h-min p-5 min-w-fit'>
+  
+        <div className='flex flew-wrap h-min font-bold mb-5'>
 
-      <div className='flex flew-wrap h-min font-bold mb-5'>{content.accountExecutives &&
+
+<div className="flex flex-wrap min-h-screen items-start">
+  
+    {content.accountExecutives &&
         content.accountExecutives.map((item, i) => (
-            <Card sx={{ Width: 345, Height:420 }} key={i} className='rounded-2xl mx-5 my-5 w-345'>
-              <CardHeader
-                avatar={
-                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    R
-                  </Avatar>
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                  </IconButton>
-                }
-                title={item.firstLast}
-                subheader= {item.role}
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image={item.imgLink}
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  Company Start Date: {item.companyStartDate}
-                  <br/>Role Start Date: {item.roleStartDate}
-                  <br/>Role Tenure Rank: {item.roleTenureRank}
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-              
-                <ExpandMore
-                  expand={expanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                  <Typography paragraph className='font-bold text-lg'>Current Role:</Typography>
-                  <Typography paragraph className='font-bold'>Key Metrics:</Typography>
-                  <Typography paragraph>
-                    Customer Satisfaction: {item.roleDevelopment.rolePerformance.customerSatisfaction}
-                    <br/>Signed Deals: {item.roleDevelopment.rolePerformance.signedDeals}
-                    <br/>Gross Renewal Rate: {item.roleDevelopment.rolePerformance.grossRenewalARR}
-                    <br/>Net Renewal Rate: {item.roleDevelopment.rolePerformance.netRenewalARR}
-                    <br/>Avg Lifetime Value: {item.roleDevelopment.rolePerformance.avgCustomerLifetimeValue}
-                  </Typography>
-                  <Typography paragraph className='font-bold'>Certifications + Enablement:</Typography>
-                  <Typography paragraph>
-                     {item.roleDevelopment.certificationsEnablement}
-                  </Typography>
-                  <Typography paragraph className='font-bold'>Workflow Analytics:</Typography>
-                  <Typography paragraph>
-                     Average Book Size L12 Mos: {item.roleDevelopment.workflowAnalytics.avgBookSize}
-                     <br/>Avg Monthly Client Time: {item.roleDevelopment.workflowAnalytics.avgClientTime}Hrs
-                  </Typography>
-                  <Typography paragraph className='font-bold'>Other:</Typography>
-                  <Typography paragraph>
-                    Note: {item.roleDevelopment.Other.Note}
-                  </Typography>
 
-                  <Typography paragraph className='font-bold text-lg'>Career:</Typography>
-                  <Typography paragraph className='font-bold'>Common Next Roles:</Typography>
-                  <Typography paragraph>
-                    {item.careerDevelopment.commonNextRoles}
-                  </Typography>
-                  <Typography paragraph className='font-bold'>Related Certfications + Enablement:</Typography>
-                  <Typography paragraph>
-                    {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
-                  </Typography>
-                  <Typography paragraph className='font-bold'>Prior Experience:</Typography>
-                  <Typography paragraph>
-                    SkillX: {item.careerDevelopment.skillsTools.Skill}
-                  </Typography>
-                  
-                </CardContent>
-              </Collapse>
-            </Card>
-        ))
-      }
-     </div>
+        <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
 
-     </div>
-    </main>
-);
+            <div className="flex items-center bg-white h-15">
+                <img className='w-14 h-14 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
+    
+                <div className="pl-3 w-full">
+                    <div className="font-medium">
+                        {item.firstLast}
+                    </div>
+                    <div className="text-gray-600 text-sm">
+                        {item.role}
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" className="w-full block h-full">
+                <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover"/>
+                <div className="bg-white w-full p-4">
+                    {item.firstLast}
+                    <p className="text-gray-800 text-sm font-medium pb-2 mb-2 border-b-2">
+                        {item.role}                    
+                    </p>
+                    <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                       Company Start: <em>{item.companyStartDate}</em>
+                       <br/>Role Start: <em>{item.roleStartDate}</em>
+                       <br/>Role Tenure Rank: <em>{item.roleTenureRank}</em>
+                    </p>
+                    <p className="text-gray-600 font-light text-xs pr-1 pb-2 mb-2 border-b-2">
+                        <em>{item.personalStatement}</em>
+                    </p>
+
+                    <div className='text-center text-gray-400 font-light italic'> 
+                        <a className='' onClick={(e) => toggleVisibility(item.EmpID)}>
+                            - - Expand - -</a>
+                    </div>
+
+                    {expandedIds.includes(item.EmpID)  && (
+                        <div className="flex flex-col my-5 px-2">
+                          
+                            <p className='text-sm'>Role Performance: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                Customer Satisfaction: {item.roleDevelopment.rolePerformance.customerSatisfaction}
+                                <br/>Deals Signed: {item.roleDevelopment.rolePerformance.signedDeals}
+                                <br/>Gross Renewal ARR: {item.roleDevelopment.rolePerformance.grossRenewalARR}
+                                <br/>Net Renewal ARR: {item.roleDevelopment.rolePerformance.netRenewalARR}
+                                <br/>Average Lifetime Value: {item.roleDevelopment.rolePerformance.avgCustomerLifetimeValue}
+                            </p>
+
+                            <p className='text-sm'>Certifications + Enablement: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.roleDevelopment.certificationsEnablement}
+                            </p>
+
+                            <p className='text-sm'>Workflow Analytics: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                Avg Accounts Managed: {item.roleDevelopment.workflowAnalytics.avgBookSize}
+                                <br/>Avg Monthly Time per Client: {item.roleDevelopment.workflowAnalytics.avgClientTime}
+                            </p>
+
+                            <p className='text-sm'>Performance Details: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.roleDevelopment.Other.Note}
+                            </p>
+
+                            <p className='text-sm'>Common Next Roles: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.careerDevelopment.commonNextRoles && item.careerDevelopment.commonNextRoles.map((role) => (<p>{role}</p>))}
+                            </p>
+
+                            <p className='text-sm'>Prior + Related: </p>
+                            <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
+                            </p>
+
+                            <div className="flex flex-col justify-starts items-left py-2 border-b-2 text-sm ">
+                                Skills + Tools:
+                                <div className='flex flex-wrap'>
+                                    {Object.keys(item.careerDevelopment.skillsTools).map(key => (
+                                        <span className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
+                                        {key}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    
+                </div>
+            </a>
+        </div>
+    ))}
+</div>
+       
+            <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
+                <div>
+                    <a title="Follow me on LinkedIn" href="https://www.linkedin.com/in/joe-ward1/" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+                        <img className="object-cover object-center w-full h-full rounded-full" src="https://th.bing.com/th/id/OIP.Fj65Lv4giEhNC2YZnKlmkAHaHa?pid=ImgDet&rs=1"/>
+                    </a>
+                </div>
+            </div>
+       </div>
+  
+       </div>
+      </main>
+    )
 }
