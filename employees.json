@@ -1,12 +1,14 @@
 {
     "accountExecutives":[
         {
+            "EmpID": "Q1",
             "firstLast": "First Last",
             "role": "Account Executive",
             "companyStartDate": "2021-11-01",
             "roleStartDate": "2021-11-01",
             "roleTenureRank": 1,
             "imgLink": "/greg.png",
+            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
             "roleDevelopment":{
             "rolePerformance": {
                     "customerSatisfaction": 9.2,
@@ -33,19 +35,24 @@
                     "Sales Engineering",
                     "Sales Ops"
                 ],
-                "relatedCertificationsEnablement": "",
+                "skillsTools":{
+                    "Salesforce": "2 Years",
+                    "B2B": "2 Years"
+                },
                 "priorExperience": {
-                    "Skill": "2 Years"
+                    "relatedCertificationsEnablement": ""
                 }  
             }
         },
         {
+            "EmpID": "X2",
             "firstLast": "First Last",
             "role": "Account Executive",
             "companyStartDate": "2021-11-01",
             "roleStartDate": "2021-11-01",
             "roleTenureRank": 1,
             "imgLink": "/greg.png",
+            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
             "roleDevelopment":{
             "rolePerformance": {
                     "customerSatisfaction": 9.2,
@@ -72,19 +79,24 @@
                     "Sales Engineering",
                     "Sales Ops"
                 ],
-                "relatedCertificationsEnablement": "",
+                "skillsTools":{
+                    "Salesforce": "2 Years",
+                    "B2B": "2 Years"
+                },
                 "priorExperience": {
-                    "Skill": "2 Years"
+                    "relatedCertificationsEnablement": ""
                 }  
             }
         },
         {
+            "EmpID": "Y3",
             "firstLast": "First Last",
             "role": "Account Executive",
             "companyStartDate": "2021-11-01",
             "roleStartDate": "2021-11-01",
             "roleTenureRank": 1,
             "imgLink": "/greg.png",
+            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
             "roleDevelopment":{
             "rolePerformance": {
                     "customerSatisfaction": 9.2,
@@ -111,19 +123,24 @@
                     "Sales Engineering",
                     "Sales Ops"
                 ],
-                "relatedCertificationsEnablement": "",
+                "skillsTools":{
+                    "Salesforce": "2 Years",
+                    "B2B": "2 Years"
+                },
                 "priorExperience": {
-                    "Skill": "2 Years"
+                    "relatedCertificationsEnablement": ""
                 }  
             }
         },
         {
+            "EmpID": "Z4",
             "firstLast": "First Last",
             "role": "Account Executive",
             "companyStartDate": "2021-11-01",
             "roleStartDate": "2021-11-01",
             "roleTenureRank": 1,
             "imgLink": "/greg.png",
+            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
             "roleDevelopment":{
             "rolePerformance": {
                     "customerSatisfaction": 9.2,
@@ -150,9 +167,12 @@
                     "Sales Engineering",
                     "Sales Ops"
                 ],
-                "relatedCertificationsEnablement": "",
+                "skillsTools":{
+                    "Salesforce": "2 Years",
+                    "B2B": "2 Years"
+                },
                 "priorExperience": {
-                    "Skill": "2 Years"
+                    "relatedCertificationsEnablement": ""
                 }  
             }
         }

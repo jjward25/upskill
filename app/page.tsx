@@ -124,11 +124,11 @@ export default function EmployeeCards() {
                   </Typography>
                   <Typography paragraph className='font-bold'>Related Certfications + Enablement:</Typography>
                   <Typography paragraph>
-                    {item.careerDevelopment.relatedCertificationsEnablement}
+                    {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
                   </Typography>
                   <Typography paragraph className='font-bold'>Prior Experience:</Typography>
                   <Typography paragraph>
-                    SkillX: {item.careerDevelopment.priorExperience.Skill}
+                    SkillX: {item.careerDevelopment.skillsTools.Skill}
                   </Typography>
                   
                 </CardContent>
