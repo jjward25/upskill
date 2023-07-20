@@ -36,7 +36,7 @@ export default function Detail() {
         <div className='flex flex-col md:flex-row h-min p-5 w-full md:w-4/5'>
 
           <div className=' m-auto md:flex md:flew-row h-min font-bold mb-5'>
-            <div className="flex flex-col md:flex-row min-h-screen md:items-start">
+            <div className="flex flex-col md:flex-row md:flex-wrap min-h-screen md:items-start">
               
                 {content.accountExecutives &&
                     content.accountExecutives.map((item, i) => (
