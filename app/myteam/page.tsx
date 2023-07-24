@@ -18,9 +18,9 @@ export default function Detail() {
 
 
     return (
-      <main className='flex flex-row min-h-screen w-full max-w-full'>
+      <main className='flex flex-col md:flex-row min-h-screen w-full max-w-full'>
 
-        <div className='flex flex-col w-0 p-0 overflow-hidden md:w-1/5 md:p-5 md:min-h-screen bg-white rounded-r-xl '>
+        <div className='flex flex-1 flex-col p-3 overflow-hidden md:w-1/5 md:p-5 md:min-h-screen bg-white rounded-r-xl  '>
 
         
         <div className='flex flex-col h-fit w-full'>                
@@ -40,8 +40,7 @@ export default function Detail() {
             </div>
 
          </div>    
-          <h3 className='h-min font-bold my-5'>Search Keywords:</h3>
-          <p>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
+          <p className='mt-5'>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
         
         </div> 
 
@@ -147,7 +146,7 @@ export default function Detail() {
                 ))}
             </div>
         
-            <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
+            <div className="fixed bottom-0 right-0 mb-4 mr-4 z-10">
                 <div>
                     <a title="Follow me on LinkedIn" href="https://www.linkedin.com/in/joe-ward1/" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
                         <img className="object-cover object-center w-full h-full rounded-full" src="https://th.bing.com/th/id/OIP.Fj65Lv4giEhNC2YZnKlmkAHaHa?pid=ImgDet&rs=1"/>

@@ -21,10 +21,10 @@ export default function Detail() {
   console.log(value)
 
   return (
-    <main className='flex flex-row min-h-screen w-full max-w-full'>
+    <main className='flex flex-col md:flex-row min-h-screen w-full max-w-full'>
 
-      <div className='flex flex-col w-0 p-0 overflow-hidden md:w-1/5 md:p-5 md:min-h-screen bg-white rounded-r-xl '>
-        <div className='flex flex-col   h-fit w-full'>                
+      <div className='flex flex-1 flex-col p-3 overflow-hidden md:w-1/5 md:p-5 md:min-h-screen bg-white rounded-r-xl '>
+        <div className='flex flex-col h-fit w-full'>                
             <h3 className="flex-1 font-medium text-xl w-full my-1">
               <a href="/myteam">
                 <p key={"Key" + Math.random()} className="flex-1 p-1 rounded font-medium text-white bg-slate-600 hover:bg-indigo-400 cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
@@ -33,7 +33,7 @@ export default function Detail() {
               </a>
             </h3>
         </div>    
-        <h3 className='h-min font-bold my-5'>Search Keywords:</h3>
+        <h3 className='h-0 md:h-min font-bold md:my-5'>Search Keywords:</h3>
         <input className='mb-3 border-2' 
             placeholder='no caps'
             onChange={(e) => {setValue(content.filter((el:any) => Object.keys(el).some((parameter) => el[parameter].toString().toLowerCase().includes(e.target.value))));}}>        
@@ -143,7 +143,7 @@ export default function Detail() {
               ))}
           </div>
       
-          <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
+          <div className="fixed bottom-0 right-0 mb-4 mr-4 z-10">
               <div>
                   <a title="Follow me on LinkedIn" href="https://www.linkedin.com/in/joe-ward1/" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
                       <img className="object-cover object-center w-full h-full rounded-full" src="https://th.bing.com/th/id/OIP.Fj65Lv4giEhNC2YZnKlmkAHaHa?pid=ImgDet&rs=1"/>
