@@ -2,6 +2,7 @@
 import { list } from 'postcss';
 import content from '../employees.json';
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 export default function Detail() {
 
@@ -82,8 +83,11 @@ export default function Detail() {
                               </p>
 
                               <div className='text-center text-gray-400 font-light italic hover:text-indigo-400'> 
-                                  <p className='' onClick={(e) => toggleVisibility(item.EmpID)}>
-                                      - - Expand - -</p>
+                                  <Link className='' 
+                                      href=''
+                                      scroll={false}
+                                      onClick={(e) => toggleVisibility(item.EmpID)}>
+                                      - - Expand - -</Link>
                               </div>
 
                               {expandedIds.includes(item.EmpID)  && (
