@@ -21,11 +21,24 @@ export default function Detail() {
       <main className='flex flex-row min-h-screen w-full max-w-full'>
 
         <div className='flex flex-col w-0 p-0 overflow-hidden md:w-1/5 md:p-5 md:min-h-screen bg-white rounded-r-xl '>
-          <div className='flex flex-row h-15'>
-            <img className='w-10 h-10 object-cover m-auto rounded-full' alt='User avatar' src="/greg.png"/>    
+
+        
+        <div className='flex flex-col h-fit w-full'>                
+
+            <h3 className="flex-1 font-medium text-xl w-full my-auto">
+            <a href="/">
+                <p key={"Key" + Math.random()} className="flex-1 p-1 mb-4  rounded font-medium text-white bg-slate-600 hover:bg-indigo-400 cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
+                    Home                
+                </p>
+                </a>
+            </h3>
+            <div className='flex flex-row h-15'>
+                <img className='w-10 h-10 object-cover m-auto rounded-full' alt='User avatar' src="/boss.png"/>    
                 <h3 className="pl-3 font-medium text-xl w-full content-center my-auto">
-                        My Team
+                    Manager Name
                 </h3>
+            </div>
+
          </div>    
           <h3 className='h-min font-bold my-5'>Search Keywords:</h3>
           <p>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
@@ -38,8 +51,8 @@ export default function Detail() {
           <div className=' m-auto md:flex md:flew-row h-min font-bold mb-5'>
             <div className="flex flex-col md:flex-row md:flex-wrap min-h-screen md:items-start">
               
-                {content.accountExecutives &&
-                    content.accountExecutives.map((item, i) => (
+                {content &&
+                    content.filter(item => item.role == 'Account Executive').map((item, i) => (
 
                     <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
 
@@ -72,7 +85,7 @@ export default function Detail() {
                                     <em>{item.personalStatement}</em>
                                 </p>
 
-                                <div className='text-center text-gray-400 font-light italic'> 
+                                <div className='text-center text-gray-400 font-light italic hover:text-indigo-400'> 
                                     <a className='' onClick={(e) => toggleVisibility(item.EmpID)}>
                                         - - Expand - -</a>
                                 </div>
@@ -115,7 +128,7 @@ export default function Detail() {
                                             {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
                                         </p>
 
-                                        <div className="flex flex-col justify-starts items-left py-2 border-b-2 text-sm ">
+                                        <div className="flex flex-col justify-starts items-left py-2 text-sm ">
                                             Skills + Tools:
                                             <div className='flex flex-wrap'>
                                                 {Object.keys(item.careerDevelopment.skillsTools).map(key => (

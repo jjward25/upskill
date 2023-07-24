@@ -1,179 +1,221 @@
-{
-    "accountExecutives":[
-        {
-            "EmpID": "Q1",
-            "firstLast": "First Last",
-            "role": "Account Executive",
-            "companyStartDate": "2021-11-01",
-            "roleStartDate": "2021-11-01",
-            "roleTenureRank": 1,
-            "imgLink": "/greg.png",
-            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
-            "roleDevelopment":{
-            "rolePerformance": {
-                    "customerSatisfaction": 9.2,
-                    "signedDeals": 20,
-                    "grossRenewalARR": "87%",
-                    "netRenewalARR": "102%",
-                    "avgCustomerLifetimeValue":"$10,000"
-                },
-                "certificationsEnablement": [
-                    "Product X Enablement"
-                ],
-                "workflowAnalytics": {
-                    "avgBookSize": 28,
-                    "avgClientTime":1.2
-                },
-                "Other": {
-                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
-                }
+[
+    {
+        "EmpID": "Q1",
+        "manager": "Junior Senior II",
+        "firstLast": "First Last",
+        "role": "Account Executive",
+        "companyStartDate": "2021-11-01",
+        "roleStartDate": "2021-11-01",
+        "roleTenureRank": 1,
+        "imgLink": "/greg.png",
+        "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "roleDevelopment":{
+        "rolePerformance": {
+                "customerSatisfaction": 9.2,
+                "signedDeals": 20,
+                "grossRenewalARR": "87%",
+                "netRenewalARR": "102%",
+                "avgCustomerLifetimeValue":"$10,000"
             },
-            "careerDevelopment": {                
-                "commonNextRoles": [
-                    "Regional Manager",
-                    "Renewals Manager",
-                    "Sales Engineering",
-                    "Sales Ops"
-                ],
-                "skillsTools":{
-                    "Salesforce": "2 Years",
-                    "B2B": "2 Years"
-                },
-                "priorExperience": {
-                    "relatedCertificationsEnablement": ""
-                }  
+            "certificationsEnablement": [
+                "Product X Enablement"
+            ],
+            "workflowAnalytics": {
+                "avgBookSize": 28,
+                "avgClientTime":1.2
+            },
+            "Other": {
+                "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
             }
         },
-        {
-            "EmpID": "X2",
-            "firstLast": "First Last",
-            "role": "Account Executive",
-            "companyStartDate": "2021-11-01",
-            "roleStartDate": "2021-11-01",
-            "roleTenureRank": 1,
-            "imgLink": "/greg.png",
-            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
-            "roleDevelopment":{
-            "rolePerformance": {
-                    "customerSatisfaction": 9.2,
-                    "signedDeals": 20,
-                    "grossRenewalARR": "87%",
-                    "netRenewalARR": "102%",
-                    "avgCustomerLifetimeValue":"$10,000"
-                },
-                "certificationsEnablement": [
-                    "Product X Enablement"
-                ],
-                "workflowAnalytics": {
-                    "avgBookSize": 28,
-                    "avgClientTime":1.2
-                },
-                "Other": {
-                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
-                }
+        "careerDevelopment": {                
+            "commonNextRoles": [
+                "Regional Manager",
+                "Renewals Manager",
+                "Sales Engineering",
+                "Sales Ops"
+            ],
+            "skillsTools":{
+                "Salesforce": "2 Years",
+                "B2B": "2 Years"
             },
-            "careerDevelopment": {                
-                "commonNextRoles": [
-                    "Regional Manager",
-                    "Renewals Manager",
-                    "Sales Engineering",
-                    "Sales Ops"
-                ],
-                "skillsTools":{
-                    "Salesforce": "2 Years",
-                    "B2B": "2 Years"
-                },
-                "priorExperience": {
-                    "relatedCertificationsEnablement": ""
-                }  
-            }
-        },
-        {
-            "EmpID": "Y3",
-            "firstLast": "First Last",
-            "role": "Account Executive",
-            "companyStartDate": "2021-11-01",
-            "roleStartDate": "2021-11-01",
-            "roleTenureRank": 1,
-            "imgLink": "/greg.png",
-            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
-            "roleDevelopment":{
-            "rolePerformance": {
-                    "customerSatisfaction": 9.2,
-                    "signedDeals": 20,
-                    "grossRenewalARR": "87%",
-                    "netRenewalARR": "102%",
-                    "avgCustomerLifetimeValue":"$10,000"
-                },
-                "certificationsEnablement": [
-                    "Product X Enablement"
-                ],
-                "workflowAnalytics": {
-                    "avgBookSize": 28,
-                    "avgClientTime":1.2
-                },
-                "Other": {
-                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
-                }
-            },
-            "careerDevelopment": {                
-                "commonNextRoles": [
-                    "Regional Manager",
-                    "Renewals Manager",
-                    "Sales Engineering",
-                    "Sales Ops"
-                ],
-                "skillsTools":{
-                    "Salesforce": "2 Years",
-                    "B2B": "2 Years"
-                },
-                "priorExperience": {
-                    "relatedCertificationsEnablement": ""
-                }  
-            }
-        },
-        {
-            "EmpID": "Z4",
-            "firstLast": "First Last",
-            "role": "Account Executive",
-            "companyStartDate": "2021-11-01",
-            "roleStartDate": "2021-11-01",
-            "roleTenureRank": 1,
-            "imgLink": "/greg.png",
-            "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
-            "roleDevelopment":{
-            "rolePerformance": {
-                    "customerSatisfaction": 9.2,
-                    "signedDeals": 20,
-                    "grossRenewalARR": "87%",
-                    "netRenewalARR": "102%",
-                    "avgCustomerLifetimeValue":"$10,000"
-                },
-                "certificationsEnablement": [
-                    "Product X Enablement"
-                ],
-                "workflowAnalytics": {
-                    "avgBookSize": 28,
-                    "avgClientTime":1.2
-                },
-                "Other": {
-                    "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
-                }
-            },
-            "careerDevelopment": {                
-                "commonNextRoles": [
-                    "Regional Manager",
-                    "Renewals Manager",
-                    "Sales Engineering",
-                    "Sales Ops"
-                ],
-                "skillsTools":{
-                    "Salesforce": "2 Years",
-                    "B2B": "2 Years"
-                },
-                "priorExperience": {
-                    "relatedCertificationsEnablement": ""
-                }  
-            }
+            "priorExperience": {
+                "relatedCertificationsEnablement": ""
+            }  
         }
-]}
+    },
+    {
+        "EmpID": "X2",
+        "firstLast": "First Last",
+        "role": "Account Executive",
+        "companyStartDate": "2021-11-01",
+        "roleStartDate": "2021-11-01",
+        "roleTenureRank": 1,
+        "imgLink": "/greg.png",
+        "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "roleDevelopment":{
+            "rolePerformance": {
+                "customerSatisfaction": 9.2,
+                "signedDeals": 20,
+                "grossRenewalARR": "87%",
+                "netRenewalARR": "102%",
+                "avgCustomerLifetimeValue":"$10,000"
+            },
+            "certificationsEnablement": [
+                "Product X Enablement"
+            ],
+            "workflowAnalytics": {
+                "avgBookSize": 28,
+                "avgClientTime":1.2
+            },
+            "Other": {
+                "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+            }
+        },
+        "careerDevelopment": {                
+            "commonNextRoles": [
+                "Regional Manager",
+                "Renewals Manager",
+                "Sales Engineering",
+                "Sales Ops"
+            ],
+            "skillsTools":{
+                "Salesforce": "2 Years",
+                "B2B": "2 Years"
+            },
+            "priorExperience": {
+                "relatedCertificationsEnablement": ""
+            }  
+        }
+    },
+    {
+        "EmpID": "Y3",
+        "firstLast": "First Last",
+        "role": "Account Executive",
+        "companyStartDate": "2021-11-01",
+        "roleStartDate": "2021-11-01",
+        "roleTenureRank": 1,
+        "imgLink": "/greg.png",
+        "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "roleDevelopment":{
+        "rolePerformance": {
+                "customerSatisfaction": 9.2,
+                "signedDeals": 20,
+                "grossRenewalARR": "87%",
+                "netRenewalARR": "102%",
+                "avgCustomerLifetimeValue":"$10,000"
+            },
+            "certificationsEnablement": [
+                "Product X Enablement"
+            ],
+            "workflowAnalytics": {
+                "avgBookSize": 28,
+                "avgClientTime":1.2
+            },
+            "Other": {
+                "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+            }
+        },
+        "careerDevelopment": {                
+            "commonNextRoles": [
+                "Regional Manager",
+                "Renewals Manager",
+                "Sales Engineering",
+                "Sales Ops"
+            ],
+            "skillsTools":{
+                "Salesforce": "2 Years",
+                "B2B": "2 Years"
+            },
+            "priorExperience": {
+                "relatedCertificationsEnablement": ""
+            }  
+        }
+    },
+    {
+        "EmpID": "Z4",
+        "firstLast": "First Last",
+        "role": "Account Executive",
+        "companyStartDate": "2021-11-01",
+        "roleStartDate": "2021-11-01",
+        "roleTenureRank": 1,
+        "imgLink": "/greg.png",
+        "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "roleDevelopment":{
+        "rolePerformance": {
+                "customerSatisfaction": 9.2,
+                "signedDeals": 20,
+                "grossRenewalARR": "87%",
+                "netRenewalARR": "102%",
+                "avgCustomerLifetimeValue":"$10,000"
+            },
+            "certificationsEnablement": [
+                "Product X Enablement"
+            ],
+            "workflowAnalytics": {
+                "avgBookSize": 28,
+                "avgClientTime":1.2
+            },
+            "Other": {
+                "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+            }
+        },
+        "careerDevelopment": {                
+            "commonNextRoles": [
+                "Regional Manager",
+                "Renewals Manager",
+                "Sales Engineering",
+                "Sales Ops"
+            ],
+            "skillsTools":{
+                "Salesforce": "2 Years",
+                "B2B": "2 Years"
+            },
+            "priorExperience": {
+                "relatedCertificationsEnablement": ""
+            }  
+        }
+    }
+    ,
+    {
+        "EmpID": "ABC1",
+        "firstLast": "First Last",
+        "role": "Scrum Master",
+        "companyStartDate": "2021-11-01",
+        "roleStartDate": "2021-11-01",
+        "roleTenureRank": 1,
+        "imgLink": "/greg.png",
+        "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "roleDevelopment":{
+        "rolePerformance": {
+                "customerSatisfaction": 9.2,
+                "signedDeals": 20,
+                "grossRenewalARR": "87%",
+                "netRenewalARR": "102%",
+                "avgCustomerLifetimeValue":"$10,000"
+            },
+            "certificationsEnablement": [
+                "Product X Enablement"
+            ],
+            "workflowAnalytics": {
+                "avgBookSize": 28,
+                "avgClientTime":1.2
+            },
+            "Other": {
+                "Note": "Led 3 successful live demos with Customer Z, Customer X, and Customer Y."
+            }
+        },
+        "careerDevelopment": {                
+            "commonNextRoles": [
+                "Technical Project Manager",
+                "Project Portfolio Manager"
+            ],
+            "skillsTools":{
+                "PMP": "2 Years"
+            },
+            "priorExperience": {
+                "relatedCertificationsEnablement": ""
+            }  
+        }
+    }
+]
