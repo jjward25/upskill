@@ -9,6 +9,10 @@
         "roleTenureRank": 1,
         "imgLink": "/greg.png",
         "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "skillsTools":{
+            "Salesforce": "2 Years",
+            "B2B": "2 Years"
+        },
         "roleDevelopment":{
         "rolePerformance": {
                 "customerSatisfaction": 9.2,
@@ -35,10 +39,7 @@
                 "Sales Engineering",
                 "Sales Ops"
             ],
-            "skillsTools":{
-                "Salesforce": "2 Years",
-                "B2B": "2 Years"
-            },
+            
             "priorExperience": {
                 "relatedCertificationsEnablement": ""
             }  
@@ -53,6 +54,10 @@
         "roleTenureRank": 1,
         "imgLink": "/greg.png",
         "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "skillsTools":{
+            "Salesforce": "2 Years",
+            "B2B": "2 Years"
+        },
         "roleDevelopment":{
             "rolePerformance": {
                 "customerSatisfaction": 9.2,
@@ -79,10 +84,6 @@
                 "Sales Engineering",
                 "Sales Ops"
             ],
-            "skillsTools":{
-                "Salesforce": "2 Years",
-                "B2B": "2 Years"
-            },
             "priorExperience": {
                 "relatedCertificationsEnablement": ""
             }  
@@ -97,6 +98,10 @@
         "roleTenureRank": 1,
         "imgLink": "/greg.png",
         "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "skillsTools":{
+            "Salesforce": "2 Years",
+            "B2B": "2 Years"
+        },
         "roleDevelopment":{
         "rolePerformance": {
                 "customerSatisfaction": 9.2,
@@ -123,10 +128,6 @@
                 "Sales Engineering",
                 "Sales Ops"
             ],
-            "skillsTools":{
-                "Salesforce": "2 Years",
-                "B2B": "2 Years"
-            },
             "priorExperience": {
                 "relatedCertificationsEnablement": ""
             }  
@@ -141,6 +142,10 @@
         "roleTenureRank": 1,
         "imgLink": "/greg.png",
         "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
+        "skillsTools":{
+            "Salesforce": "2 Years",
+            "B2B": "2 Years"
+        },
         "roleDevelopment":{
         "rolePerformance": {
                 "customerSatisfaction": 9.2,
@@ -167,10 +172,6 @@
                 "Sales Engineering",
                 "Sales Ops"
             ],
-            "skillsTools":{
-                "Salesforce": "2 Years",
-                "B2B": "2 Years"
-            },
             "priorExperience": {
                 "relatedCertificationsEnablement": ""
             }  
@@ -185,6 +186,10 @@
         "roleStartDate": "2021-11-01",
         "roleTenureRank": 1,
         "imgLink": "/greg.png",
+        "skillsTools":{
+            "Salesforce": "2 Years",
+            "B2B": "2 Years"
+        },
         "personalStatement": "My career path has revolved around this field/skill, doing X for A Co. before this. I enjoy activities and value attribute, attribute, and attribute in the workplace. ",
         "roleDevelopment":{
         "rolePerformance": {
@@ -210,9 +215,6 @@
                 "Technical Project Manager",
                 "Project Portfolio Manager"
             ],
-            "skillsTools":{
-                "PMP": "2 Years"
-            },
             "priorExperience": {
                 "relatedCertificationsEnablement": ""
             }  

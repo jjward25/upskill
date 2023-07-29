@@ -21,6 +21,19 @@ export default function Detail() {
   const [value, setValue] = useState(content);
   console.log(value)
 
+  function filterByValue(array:any, string:any) {
+    return array.filter(o => Object.keys(o).some(k => String(o[k]).toLowerCase().includes(string.toLowerCase())));
+  }
+  
+  function filterByRole(array:any, string:any) {
+    return array.filter(emp => emp.role.toLowerCase().includes(string.toLowerCase()))
+}
+  function filterByName(array:any, string:any) {
+    return array.filter(emp => emp.firstLast.toLowerCase().includes(string.toLowerCase()))
+    }
+
+
+
   return (
     <main className='flex flex-col md:flex-row min-h-screen w-full max-w-full'>
 
@@ -33,12 +46,17 @@ export default function Detail() {
                 </p>
               </a>
             </h3>
-        </div>    
-        <h3 className='h-0 md:h-min font-bold md:my-5'>Search Keywords:</h3>
-        <input className='mb-3 border-2' 
-            placeholder='no caps'
-            onChange={(e) => {setValue(content.filter((el:any) => Object.keys(el).some((parameter) => el[parameter].toString().toLowerCase().includes(e.target.value))));}}>        
+        </div>  
+        <h3 className='h-0 md:h-min font-bold md:my-5'>Search:</h3>
+        <input className='mb-5 border-2 ' 
+            placeholder='Search by Role'
+            onChange={(e) => {setValue(filterByRole(content,e.target.value));}}>        
         </input>
+        <input className='mb-5 border-2' 
+            placeholder='Search by Name'
+            onChange={(e) => {setValue(filterByName(content,e.target.value));}}>        
+        </input>
+   
         <p className='my-3'>{`Visualizing employee data this way helps with staffing projects and management 1:1s, gives HRs a view of internal candidates for openings, and can be used to steer professional development towards company future state goals.`}</p>
       </div> 
 
@@ -46,34 +64,32 @@ export default function Detail() {
       <div className='flex flex-col md:flex-row h-min p-5 w-full md:w-4/5'>
 
         <div className=' m-auto md:flex md:flew-row h-min font-bold mb-5'>
-          <div className="flex flex-col md:flex-row md:flex-wrap min-h-screen md:items-start">
+      
+          <div className="flex flex-col md:flex-row md:flex-wrap min-h-screen md:content-start md:justify-normal md:items-start">
+
 
               {content &&
                   value.map((item, i) => (
 
                   <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
 
-                      <div className="flex items-center bg-white h-15">
-                          <img className='w-14 h-14 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
+                      <div className="flex items-center bg-white h-15 pl-3 pt-2">
+                          <img className='w-14 h-14 p-1 mt-1 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
                 
                           <div className="pl-3 w-full">
                               <div className="font-medium">
                                   {item.firstLast}
                               </div>
-                              <div className="text-gray-600 text-sm">
+                              <div className="text-gray-600 text-sm pt-1">
                                   {item.role}
                               </div>
                           </div>
                       </div>
 
                       <a href="#" className="w-full block h-full">
-                          <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover"/>
-                          <div className="bg-white w-full p-4">
-                              {item.firstLast}
-                              <p className="text-gray-800 text-sm font-medium pb-2 mb-2 border-b-2">
-                                  {item.role}                    
-                              </p>
-                              <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                          <div className="bg-white w-full p-4 pt-2">
+                            
+                              <p className="text-gray-600 font-light text-sm py-2 mb-2 border-y-2">
                                 Company Start: <em>{item.companyStartDate}</em>
                                 <br/>Role Start: <em>{item.roleStartDate}</em>
                                 <br/>Role Tenure Rank: <em>{item.roleTenureRank}</em>
@@ -81,6 +97,17 @@ export default function Detail() {
                               <p className="text-gray-600 font-light text-xs pr-1 pb-2 mb-2 border-b-2">
                                   <em>{item.personalStatement}</em>
                               </p>
+
+                              <div className="flex flex-col justify-starts items-left py-2 mb-2 text-sm border-b-2">
+                                    Skills + Tools:
+                                    <div className='flex flex-wrap mb-2'>
+                                        {Object.keys(item.skillsTools).map(key => (
+                                            <span key={"Key" + Math.random()} className="my-2 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
+                                            {key}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
 
                               <div className='text-center text-gray-400 font-light italic hover:text-indigo-400'> 
                                   <Link className='' 
@@ -92,7 +119,8 @@ export default function Detail() {
 
                               {expandedIds.includes(item.EmpID)  && (
                                   <div className="flex flex-col my-5 px-2">
-                                    
+                                    <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover mb-2 rounded-xl"/>
+
                                       <p className='text-sm'>Role Performance: </p>
                                       <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
                                           Customer Satisfaction: {item.roleDevelopment.rolePerformance.customerSatisfaction}
@@ -124,20 +152,9 @@ export default function Detail() {
                                       </p>
 
                                       <p className='text-sm'>Prior + Related: </p>
-                                      <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                      <p className="text-gray-600 font-light text-sm pb-2 mb-2">
                                           {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
                                       </p>
-
-                                      <div className="flex flex-col justify-starts items-left py-2 text-sm ">
-                                          Skills + Tools:
-                                          <div className='flex flex-wrap'>
-                                              {Object.keys(item.careerDevelopment.skillsTools).map(key => (
-                                                  <span key={"Key" + Math.random()} className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
-                                                  {key}
-                                                  </span>
-                                              ))}
-                                          </div>
-                                      </div>
                                   </div>
                               )}
                               

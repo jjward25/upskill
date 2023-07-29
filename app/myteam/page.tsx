@@ -2,6 +2,12 @@
 import content from '../../employees.json';
 import React, { useState } from 'react'
 
+import {Bar} from 'react-chartjs-2';
+import {Chart, BarController, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement} from 'chart.js'
+Chart.register(BarController, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement)
+
+
+
 export default function Detail() {
 
     const [expandedIds, setExpandedIds] = useState(['']);
@@ -16,6 +22,67 @@ export default function Detail() {
     });
   };
 
+  const barData = {
+    labels: ['Name1', 'Name1', 'Name3', 'Name4'],
+    datasets: [{
+      label: 'Metric 1',
+      data: [12, 19, 3, 5],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1
+    }]
+  }
+
+  const barData2 = {
+    labels: ['Name1', 'Name1', 'Name3', 'Name4'],
+    datasets: [{
+      label: 'Metric 2',
+      data: [4, 10, 13, 15],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1
+    }]
+  }
+  const barData3 = {
+    labels: ['Name1', 'Name1', 'Name3', 'Name4'],
+    datasets: [{
+      label: 'Metric 3',
+      data: [140, 103, 113, 154],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1
+    }]
+  }
 
     return (
       <main className='flex flex-col md:flex-row min-h-screen w-full max-w-full'>
@@ -47,35 +114,31 @@ export default function Detail() {
 
         <div className='flex flex-col md:flex-row h-min p-5 w-full md:w-4/5'>
 
-          <div className=' m-auto md:flex md:flew-row h-min font-bold mb-5'>
-            <div className="flex flex-col md:flex-row md:flex-wrap min-h-screen md:items-start">
-              
+        <div className=' m-auto md:flex w-full md:flew-row h-min font-bold mb-5 md:max-w-1/2'>
+
+        <div className="flex flex-col md:flex-row md:flex-wrap min-h-screen md:content-start md:justify-normal md:items-start">
+
                 {content &&
                     content.filter(item => item.role == 'Account Executive').map((item, i) => (
 
-                    <div key={"Card" + Math.random()} className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-5 my-5">
+                    <div key={"Card" + Math.random()} className=" overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl rounded-lg h-90 w-80 cursor-pointer mx-auto md:mx-5 my-5">
 
-                        <div className="flex items-center bg-white h-15">
-                            <img className='w-14 h-14 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
+                        <div className="flex items-center bg-white h-15 pl-3 pt-2">
+                            <img className='w-14 h-14 p-1 mt-1 object-cover m-auto rounded-full' alt='User avatar' src={item.imgLink}/>
                 
                             <div className="pl-3 w-full">
-                                <div className="font-medium">
-                                    {item.firstLast}
-                                </div>
-                                <div className="text-gray-600 text-sm">
-                                    {item.role}
-                                </div>
-                            </div>
+                              <div className="font-medium">
+                                  {item.firstLast}
+                              </div>
+                              <div className="text-gray-600 text-sm pt-1">
+                                  {item.role}
+                              </div>
+                          </div>
                         </div>
 
                         <a href="#" className="w-full block h-full">
-                            <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover"/>
-                            <div className="bg-white w-full p-4">
-                                {item.firstLast}
-                                <p className="text-gray-800 text-sm font-medium pb-2 mb-2 border-b-2">
-                                    {item.role}                    
-                                </p>
-                                <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                            <div className="bg-white w-full p-4 pt-2">
+                            <p className="text-gray-600 font-light text-sm py-2 mb-2 border-y-2">
                                   Company Start: <em>{item.companyStartDate}</em>
                                   <br/>Role Start: <em>{item.roleStartDate}</em>
                                   <br/>Role Tenure Rank: <em>{item.roleTenureRank}</em>
@@ -84,6 +147,17 @@ export default function Detail() {
                                     <em>{item.personalStatement}</em>
                                 </p>
 
+                                <div className="flex flex-col justify-starts items-left py-2 mb-2 text-sm border-b-2">
+                                    Skills + Tools:
+                                    <div className='flex flex-wrap'>
+                                        {Object.keys(item.skillsTools).map(key => (
+                                            <span key={"Key" + Math.random()}  className="my-2 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
+                                            {key}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 <div className='text-center text-gray-400 font-light italic hover:text-indigo-400'> 
                                     <a className='' onClick={(e) => toggleVisibility(item.EmpID)}>
                                         - - Expand - -</a>
@@ -91,7 +165,8 @@ export default function Detail() {
 
                                 {expandedIds.includes(item.EmpID)  && (
                                     <div className="flex flex-col my-5 px-2">
-                                      
+                                        <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover mb-2 rounded-xl"/>
+
                                         <p className='text-sm'>Role Performance: </p>
                                         <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
                                             Customer Satisfaction: {item.roleDevelopment.rolePerformance.customerSatisfaction}
@@ -123,20 +198,11 @@ export default function Detail() {
                                         </p>
 
                                         <p className='text-sm'>Prior + Related: </p>
-                                        <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
+                                        <p className="text-gray-600 font-light text-sm pb-2 mb-2">
                                             {item.careerDevelopment.priorExperience.relatedCertificationsEnablement}
                                         </p>
 
-                                        <div className="flex flex-col justify-starts items-left py-2 text-sm ">
-                                            Skills + Tools:
-                                            <div className='flex flex-wrap'>
-                                                {Object.keys(item.careerDevelopment.skillsTools).map(key => (
-                                                    <span key={"Key" + Math.random()}  className="my-1 mr-1 px-2 py-1 rounded font-medium text-white bg-indigo-500">
-                                                    {key}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 )}
                                 
@@ -146,6 +212,43 @@ export default function Detail() {
                 ))}
             </div>
         
+            <div className='flex flex-col h-screen md:w-full '>
+                
+                <div className='h-1/5 w-full my-3'>
+                <Bar 
+                data={barData}
+                width={400}
+                height={200}
+                options={{
+                    maintainAspectRatio: false
+                }}
+                />
+                </div>
+
+                <div className='h-1/5 w-full my-5'>
+                <Bar 
+                data={barData2}
+                width={400}
+                height={200}
+                options={{
+                    maintainAspectRatio: false
+                }}
+                />
+                </div>
+
+                <div className='h-1/5 w-full my-5'>
+                <Bar 
+                data={barData3}
+                width={400}
+                height={200}
+                options={{
+                    maintainAspectRatio: false
+                }}
+                />
+                </div>
+            </div>
+                                    
+                                
             <div className="fixed bottom-0 right-0 mb-4 mr-4 z-10">
                 <div>
                     <a title="Follow me on LinkedIn" href="https://www.linkedin.com/in/joe-ward1/" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
