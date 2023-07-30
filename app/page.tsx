@@ -3,6 +3,9 @@ import { list } from 'postcss';
 import content from '../employees.json';
 import React, { useState } from 'react'
 import Link from 'next/link'
+import {Chart, BarController,BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement, ArcElement} from 'chart.js'
+import { Doughnut } from 'react-chartjs-2';
+Chart.register(BarController,ArcElement, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement)
 
 export default function Detail() {
 
@@ -33,6 +36,28 @@ export default function Detail() {
     }
 
 
+    const pieData = {
+        backgroundColor: [
+            "rgb(,2,88,255)",
+            "rgb(249,151,0)",
+            "rgb(255,199,0)",
+            "rgb(32,214,152)",
+        ],
+        labels: ["Skill1","Skill2","Skill3","Skill4"],
+        datasets: [
+            {
+                label: "Years",
+                data: [3,5,10,3],
+                backgroundColor: [
+                    "rgb(,2,88,255)",
+                    "rgb(249,151,0)",
+                    "rgb(255,199,0)",
+                    "rgb(32,214,152)",
+                ],
+                hoverOffset: 4,
+            }
+        ]
+    }
 
   return (
     <main className='flex flex-col md:flex-row min-h-screen w-full max-w-full'>
@@ -119,7 +144,9 @@ export default function Detail() {
 
                               {expandedIds.includes(item.EmpID)  && (
                                   <div className="flex flex-col my-5 px-2">
-                                    <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover mb-2 rounded-xl"/>
+                                    <div className="flex flex-row max-h-60 w-full object-cover mb-5 rounded-xl justify-center">
+                                        <Doughnut data={pieData}/>
+                                    </div>
 
                                       <p className='text-sm'>Role Performance: </p>
                                       <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">

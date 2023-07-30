@@ -1,10 +1,10 @@
 "use client"
 import content from '../../employees.json';
 import React, { useState } from 'react'
-
+import { Doughnut } from 'react-chartjs-2';
 import {Bar} from 'react-chartjs-2';
-import {Chart, BarController, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement} from 'chart.js'
-Chart.register(BarController, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement)
+import {Chart, BarController, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController,ArcElement, LineElement,PieController ,PointElement} from 'chart.js'
+Chart.register(BarController, ArcElement, BarElement, CategoryScale,LinearScale,Tooltip, Legend, LineController, LineElement,PieController ,PointElement)
 
 
 
@@ -83,7 +83,28 @@ export default function Detail() {
       borderWidth: 1
     }]
   }
-
+  const pieData = {
+    backgroundColor: [
+        "rgb(,2,88,255)",
+        "rgb(249,151,0)",
+        "rgb(255,199,0)",
+        "rgb(32,214,152)",
+    ],
+    labels: ["Skill1","Skill2","Skill3","Skill4"],
+    datasets: [
+        {
+            label: "Years",
+            data: [3,5,10,3],
+            backgroundColor: [
+                "rgb(,2,88,255)",
+                "rgb(249,151,0)",
+                "rgb(255,199,0)",
+                "rgb(32,214,152)",
+            ],
+            hoverOffset: 4,
+        }
+    ]
+}
     return (
       <main className='flex flex-col md:flex-row min-h-screen w-full max-w-full'>
 
@@ -165,7 +186,9 @@ export default function Detail() {
 
                                 {expandedIds.includes(item.EmpID)  && (
                                     <div className="flex flex-col my-5 px-2">
-                                        <img alt="blog photo" src={item.imgLink} className="max-h-40 w-full object-cover mb-2 rounded-xl"/>
+                                        <div className="flex flex-row max-h-60 w-full object-cover mb-5 rounded-xl justify-center">
+                                        <Doughnut data={pieData}/>
+                                        </div>
 
                                         <p className='text-sm'>Role Performance: </p>
                                         <p className="text-gray-600 font-light text-sm pb-2 mb-2 border-b-2">
@@ -214,7 +237,7 @@ export default function Detail() {
         
             <div className='flex flex-col h-screen md:w-full '>
                 
-                <div className='h-1/5 w-full my-3'>
+                <div className='h-1/5 w-4/5 my-3 mx-auto'>
                 <Bar 
                 data={barData}
                 width={400}
@@ -225,7 +248,7 @@ export default function Detail() {
                 />
                 </div>
 
-                <div className='h-1/5 w-full my-5'>
+                <div className='h-1/5 w-4/5 my-5 mx-auto'>
                 <Bar 
                 data={barData2}
                 width={400}
@@ -236,7 +259,7 @@ export default function Detail() {
                 />
                 </div>
 
-                <div className='h-1/5 w-full my-5'>
+                <div className='h-1/5 w-4/5 my-5 mx-auto'>
                 <Bar 
                 data={barData3}
                 width={400}
